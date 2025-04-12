@@ -88,7 +88,7 @@ Make sure:
 Simply open command prompt in the script directory and run:
 
 ```bash
-python naukri_resume_uploader.py
+python naukri_resume_auto_update.py
 ```
 
 It will:
@@ -112,6 +112,41 @@ It will:
 
 - Schedule this script weekly using Windows Task Scheduler to keep your profile fresh!
 - Avoid running it too frequently to prevent account restrictions.
+
+---
+
+## ⏰ Automate with Task Scheduler or PowerShell
+
+To keep your Naukri profile always fresh, you can **automate this script** to run daily or weekly using:
+
+### ✅ Windows Task Scheduler
+
+1. Open **Task Scheduler** on Windows
+2. Click **Create Basic Task**
+3. Give it a name like `Naukri Resume Auto Update`
+4. Set the trigger (e.g., Daily or Weekly)
+5. Action: Select **Start a Program**
+6. Browse to:
+   ```
+   C:\Path\To\python.exe
+   ```
+   and in **Add arguments**, write:
+   ```
+   C:\Path\To\naukri_resume_auto_update.py
+   ```
+7. Click Finish — you're done! ✅
+
+### ✅ PowerShell Script (Optional)
+
+You can also create a `.ps1` script:
+
+```powershell
+Start-Process "python.exe" "C:\Path\To\naukri_resume_auto_update.py"
+```
+
+Then schedule this `.ps1` file in Task Scheduler.
+
+💡 **Pro Tip:** Run the script during early morning hours to increase visibility when recruiters start their day!
 
 ---
 
